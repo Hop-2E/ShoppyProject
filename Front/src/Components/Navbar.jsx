@@ -43,14 +43,22 @@ const Navbar = () => {
       </InputGroup>
                     </div>
                     <div className="midleft">
-                        <p><BsFillBagDashFill size={30} color={"blue"}/></p>
-                        <p><AiOutlineHistory size={30} color={"blue"}/></p>
-                        <p><BsFillInboxesFill size={30} color={"blue"}/></p>
-                        <p><BsFillCartCheckFill size={30} color={"blue"}/></p>
-                        <p><AiOutlineUser size={30} color={"blue"}/></p>
+                        <p><BsFillBagDashFill size={20} color={"white"}/></p>
+                        <p><AiOutlineHistory size={20} color={"white"}/></p>
+                        <p><BsFillInboxesFill size={20} color={"white"}/></p>
+                        <p><BsFillCartCheckFill size={20} color={"white"}/></p>
+                        <p><AiOutlineUser size={20} color={"white"}/></p>
                     </div>
                 </div>
-                <div className="NavBot"></div>
+                <div className="NavBot">
+                    <div className="botright">
+                        <div className="angilal"></div>
+                        <p>Men</p>
+                        <p>Women</p>
+                        <p>Kids</p>
+                        <p>Male</p>
+                    </div>
+                </div>
             </div>
         </div>
         )

@@ -1,20 +1,36 @@
 import mongoose from "mongoose";
 
-export const ProductSchema = new mongoose.Schema({
-  name: {
-    required: [true, "Ner"],
-    type: String,
-  },
+const ProductSchema = new mongoose.Schema({
   image: {
-    required: [true, "zurag"],
+    required: [true, "Image"],
+    type: String,
+  },
+  price: {
+    required: [false, "Price"],
+    type: String,
+  },
+  desc: {
+    type: String,
+  },
+  user_id: {
+    type: String,
+    ref: "User",
+    required: true,
+  },
+  category: {
+    required: [false, "Price"],
     type: String,
   },
 });
-ProductSchema.virtual("Link", {
-  ref: "Link",
-  localField: "_id",
-  foreignField: "user_id",
+const OrderSchema = new mongoose.Schema({
+  productId: {
+    type: String,
+  },
+  user_id: {
+    type: String,
+    ref: "User",
+    required: true,
+  },
 });
-const Product = mongoose.model("User", ProductSchema);
-
-export default Product;
+export const Product = mongoose.model("Product", ProductSchema);
+export const Order = mongoose.model("Order", OrderSchema);

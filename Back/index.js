@@ -2,12 +2,17 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
+import productRouter from "./router/product.js";
+import userRouter from "./router/user.js";
 const app = express();
 
 dotenv.config();
 app.use(express.json());
 
 app.use(cors());
+app.use("/users", userRouter);
+
+app.use("/", productRouter);
 
 const uri = process.env.MONGO_ATLAS_URI || "";
 const port = process.env.PORT || 3600;

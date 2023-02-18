@@ -1,5 +1,5 @@
-import Menu from "../comp/Menu";
-import MenuClicked from "../comp/MenuClicked";
+import Menu from "../Components/Menu";
+import MenuClicked from "../Components/MenuClicked";
 import { createContext } from "react";
 import { useState } from "react";
 export const MenuChange = createContext();

@@ -56,7 +56,7 @@ const Navbar = () => {
                         <p>Men</p>
                         <p>Women</p>
                         <p>Kids</p>
-                        <p>Male</p>
+                        <p>Sports</p>
                     </div>
                 </div>
             </div>

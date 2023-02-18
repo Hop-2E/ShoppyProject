@@ -8,6 +8,7 @@ export const getAllProduct = async (req, res) => {
     const product = await Product.find({}).limit(Limit).skip(Skip);
     res.status(200).send({
       data: product,
+      message: "Nice",
     });
   } catch (error) {
     res.status(400).send({

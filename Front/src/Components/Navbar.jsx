@@ -5,6 +5,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
+import Menu from "./Menu"
 import 'bootstrap/dist/css/bootstrap.css';
 
 const Navbar = () => {
@@ -52,7 +53,7 @@ const Navbar = () => {
                 </div>
                 <div className="NavBot">
                     <div className="botright">
-                        <div className="angilal"></div>
+                        <p>Menu</p>
                         <p>Men</p>
                         <p>Women</p>
                         <p>Kids</p>

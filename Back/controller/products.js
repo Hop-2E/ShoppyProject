@@ -8,6 +8,7 @@ export const getAllProduct = async (req, res) => {
     const product = await Product.find({}).limit(Limit).skip(Skip);
     res.status(200).send({
       data: product,
+      message: "Nice",
     });
   } catch (error) {
     res.status(400).send({
@@ -80,6 +81,23 @@ export const approveProduct = async (req, res) => {
     res.status(200).send({
       data: product,
       message: "Approved",
+    });
+  } catch (error) {
+    res.status(400).send({
+      data: error.message,
+    });
+  }
+};
+
+export const getProductByCate = async (req, res) => {
+  try {
+    const { category } = req.body;
+    const products = await Product.find({
+      category: category,
+    });
+
+    res.status(200).send({
+      data: products,
     });
   } catch (error) {
     res.status(400).send({

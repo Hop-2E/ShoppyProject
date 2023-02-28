@@ -88,3 +88,20 @@ export const approveProduct = async (req, res) => {
     });
   }
 };
+
+export const getProductByCate = async (req, res) => {
+  try {
+    const { category } = req.body;
+    const products = await Product.find({
+      category: category,
+    });
+
+    res.status(200).send({
+      data: products,
+    });
+  } catch (error) {
+    res.status(400).send({
+      data: error.message,
+    });
+  }
+};

@@ -12,6 +12,7 @@ import {
   AiOutlineUser,
 } from "react-icons/ai";
 import Logo from "../Assets/Logo.png";
+import Ads from "./BigAds"
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Form from "react-bootstrap/Form";

@@ -69,8 +69,9 @@ top: 0;
 }
 
 .NavCont{
-    height: 2000px;
+    height: 157px;
     width: 100%;
+    z-index: 1;
 }
 
 .tavtaimoril{
@@ -108,4 +109,15 @@ top: 0;
     justify-content: space-evenly;
     border-right: 2px solid rgb(255, 255, 255);
     border-left: 2px solid rgb(255, 255, 255);
+}
+.adbody{
+    height: 650px;
+    width: 100%;
+    overflow: hidden;
+    z-index: 2;
+}
+.adpic{
+    height:650px;
+    width: 100%;
+    z-index: 2;
 }

@@ -80,6 +80,15 @@ top: 0;
     margin-left: 25px;
     margin-right: 25px;
 }
+.tavtaimoril2{
+    height: 25px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    font-size: 12px;
+}
 .botright{
     height:100%;
     width: 600px;
@@ -90,4 +99,13 @@ top: 0;
     font-size: 12px;
     font-family: Arial, sans-serif;
     margin-left: 30px;
+}
+.icons{
+    height: 15px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-right: 2px solid rgb(255, 255, 255);
+    border-left: 2px solid rgb(255, 255, 255);
 }

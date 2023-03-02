@@ -118,7 +118,9 @@ const Navbar = () => {
               <Link to="/c/male" style={{ textDecoration: "none" }}>
                 <span className="linksWith">Man</span>
               </Link>
-              <span className="linksWith">Kids</span>
+              <Link to="/c/kids" style={{ textDecoration: "none" }}>
+                <span className="linksWith">Kids</span>
+              </Link>
             </div>
           </div>
           <div className="News">

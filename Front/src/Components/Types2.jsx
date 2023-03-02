@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "../App.css";
 import { instance } from "../App";
 
-const Types = () => {
+const Types2 = () => {
   const [data, setData] = useState([]);
 
   const getData = async () => {
@@ -39,4 +39,4 @@ const Types = () => {
   );
 };
 
-export default Types;
+export default Types2;

@@ -121,6 +121,9 @@ const Navbar = () => {
               <Link to="/c/kids" style={{ textDecoration: "none" }}>
                 <span className="linksWith">Kids</span>
               </Link>
+              <Link to="/c/sport" style={{ textDecoration: "none" }}>
+                <span className="linksWith">Sports</span>
+              </Link>
             </div>
           </div>
           <div className="News">

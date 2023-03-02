@@ -1,6 +1,6 @@
 import "../App.css";
 
-const OnePicture = () => {
+const SecondPicture = () => {
   return (
     <div className="onePictureCont">
       <img
@@ -12,4 +12,4 @@ const OnePicture = () => {
   );
 };
 
-export default OnePicture;
+export default SecondPicture;

@@ -1,35 +1,16 @@
-// import { useEffect, useState } from "react";
-// import { instance } from "../App.jsx";
-// const Eregtei = () => {
-//   const [data, setData] = useState([]);
-//   const getMale = async () => {
-//     const res = await instance.post("/products/cate", {
-//       category: "male",
-//     });
-//     console.log(res);
-//     setData(
-//       res.data.data.map((el) => {
-//         return el;
-//       })
-//     );
-//   };
+import "../App.css";
+import Navbar from "../Components/Navbar";
+import SecondPicture from "../Components/SecondPicture";
+import Types2 from "../Components/Types2";
 
-//   useEffect(() => {
-//     getMale();
-//   }, []);
-//   return (
-//     <div style={{ display: "flex", flexDirection: "row" }}>
-//       {data &&
-//         data.map((el, index) => {
-//           return (
-//             <div key={index}>
-//               <div>{el.image}</div>
-//               <div>{el.price}</div>
-//               <div>{el.category}</div>
-//             </div>
-//           );
-//         })}
-//     </div>
-//   );
-// };
-// export default Eregtei;
+const Emegtei = () => {
+  return (
+    <>
+      <Navbar />
+      <SecondPicture />
+      <Types2 />
+      <SecondPicture />
+    </>
+  );
+};
+export default Emegtei;

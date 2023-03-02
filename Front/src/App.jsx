@@ -6,7 +6,7 @@ import Sport from "./Pages/Sport.jsx";
 import Menu from "./Components/Menu.jsx";
 import SignUp from "./Pages/SignUp";
 import Login from "./Pages/Login";
-// import { Emegtei } from "./Pages/index";
+// import { Login } from "./Pages/index.js";
 import Navbar from "./Components/Navbar";
 import HomeLogged from "./Pages/HomeLogged";
 import "./App.css";

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 import Navbar from "../Components/Navbar";
+import { Link } from "react-router-dom";
 import { instance } from "../App";
 const HomePage = () => {
   const [image, setImage] = useState();
@@ -29,12 +30,19 @@ const HomePage = () => {
       console.log("as");
     }
   };
+
+  const logOut = async () => {
+    window.localStorage.removeItem("id");
+  };
   useEffect(() => {
     getData();
   }, []);
   return (
     <div>
       <Navbar />
+      <Link to="/">
+        <Button onClick={logOut}>Log Out</Button>
+      </Link>
       <div>
         <input placeholder="Image" onChange={(e) => setImage(e.target.value)} />
         <input

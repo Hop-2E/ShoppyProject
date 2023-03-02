@@ -67,6 +67,19 @@ export const getUserByObject = async (req, res) => {
     });
   }
 };
+export const getUserById = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const user = await User.findById({ _id: id });
+    res.status(200).send({
+      data: user,
+    });
+  } catch (error) {
+    res.status(400).send({
+      data: error.message,
+    });
+  }
+};
 
 export const buyProduct = async (req, res) => {
   try {

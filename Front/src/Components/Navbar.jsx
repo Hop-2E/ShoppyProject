@@ -16,10 +16,23 @@ import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-import Menu from "./Menu";
 import "bootstrap/dist/css/bootstrap.css";
+import { Link } from "react-router-dom";
+import { instance } from "../App";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+  const [id, setId] = useState();
+  const [name, setName] = useState();
+  const getData = async () => {
+    const res = await instance.get(`/users/${id}`);
+    setName(res.data.data.name);
+  };
+
+  useEffect(() => {
+    getData();
+    setId(JSON.parse(localStorage.getItem("id")));
+  });
   return (
     <div className="NavCont">
       <div className="NavBody">
@@ -28,7 +41,7 @@ const Navbar = () => {
           <div className="tavtaimoril2">
             <div>86043843 </div>
             <div className="icons">
-                <BsInstagram size={15} /> <BsFacebook size={15} />
+              <BsInstagram size={15} /> <BsFacebook size={15} />
               <BsYoutube size={15} /> <AiFillLinkedin size={15} />
             </div>
             <div> Leave review</div>
@@ -36,7 +49,10 @@ const Navbar = () => {
         </div>
         <div className="NavMid">
           <div className="midright">
-            <img src={Logo}></img>
+            <Link to={`/users/${id}`}>
+              <img src={Logo} alt=""></img>
+            </Link>
+
             <InputGroup
               style={{
                 width: "600px",
@@ -78,19 +94,40 @@ const Navbar = () => {
             <p>
               <BsFillCartCheckFill size={20} color={"white"} />
             </p>
-            <p>
-              <AiOutlineUser size={20} color={"white"} />
-            </p>
+            <Link to="/login" style={{ textDecoration: "none" }}>
+              <p className="username">
+                <AiOutlineUser size={20} color={"white"} />
+                {name}
+              </p>
+            </Link>
           </div>
         </div>
         <div className="NavBot">
-          <div className="botright">
-            <p>Menu</p>
-            <p>Men</p>
-            <p>Women</p>
-            <p>Kids</p>
-            <p>Sports</p>
+          <div className="rightBotHeader">
+            <div className="angilal">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png"
+                alt=""
+              />
+              <span>АНГИЛАЛ</span>
+            </div>
+            <div className="cate">
+              <Link to="/c/female" style={{ textDecoration: "none" }}>
+                <span className="linksWith">Woman</span>
+              </Link>
+              <span className="linksWith">Man</span>
+              <span className="linksWith">Kids</span>
+            </div>
           </div>
+          <div className="News">
+            <span className="linksWith">New</span>
+            <span className="linksWith">Brands</span>
+            <span className="linksWith">Sale</span>
+            <span className="linksWith">Gift Card</span>
+          </div>
+          {/* <div className="botright">
+            <Link to="/c/male">male</Link>
+            </div> */}
         </div>
       </div>
     </div>

@@ -1,8 +1,8 @@
 import Navbar from "../Components/Navbar";
 
-import { instance } from "../App";
+import { useEffect } from "react";
 const Order = () => {
-    
+  useEffect(() => {});
   return (
     <div>
       <Navbar />

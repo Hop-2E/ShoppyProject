@@ -101,7 +101,7 @@ export const getProductByCate = async (req, res) => {
     });
   } catch (error) {
     res.status(400).send({
-      data: error.message,
+      data: error,
     });
   }
 };

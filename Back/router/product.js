@@ -14,7 +14,7 @@ const postRouter = express.Router();
 postRouter.get("/products", getAllProduct);
 postRouter.post("/products/createProduct", adminCheck, createProduct);
 postRouter.post("/order", buyProduct);
-postRouter.post("/approve", approveProduct);
+postRouter.post("/approve", adminCheck, approveProduct);
 postRouter.get("/products/:id", getUsersProduct);
 postRouter.post("/products/cate", getProductByCate);
 

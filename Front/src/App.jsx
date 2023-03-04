@@ -7,6 +7,7 @@ import Menu from "./Components/Menu.jsx";
 import SignUp from "./Pages/SignUp";
 import Login from "./Pages/Login";
 // import { Login } from "./Pages/index.js";
+import Order from "./Pages/Order.jsx";
 import Navbar from "./Components/Navbar";
 import HomeLogged from "./Pages/HomeLogged";
 import "./App.css";
@@ -21,7 +22,7 @@ export const instance = axios.create({
 });
 export default function App() {
   return (
-    <div className="">
+    <div>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="/c/female" element={<Emegtei />} />
           <Route path="/c/kids" element={<Huuhed />} />
           <Route path="/c/sport" element={<Sport />} />
+          <Route path="/order" element={<Order />} />
           <Route path="/users/:id" element={<HomeLogged />} />
         </Routes>
       </BrowserRouter>

@@ -16,6 +16,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import Button from "react-bootstrap/esm/Button";
 import "bootstrap/dist/css/bootstrap.css";
 import { Link } from "react-router-dom";
 import { instance } from "../App";
@@ -28,7 +29,9 @@ const Navbar = () => {
     const res = await instance.get(`/users/${id}`);
     setName(res.data.data.name);
   };
-
+  const logOut = async () => {
+    window.localStorage.removeItem("id");
+  };
   useEffect(() => {
     getData();
     setId(JSON.parse(localStorage.getItem("id")));
@@ -52,7 +55,6 @@ const Navbar = () => {
             <Link to={`/users/${id}`}>
               <img src={Logo} alt=""></img>
             </Link>
-
             <InputGroup
               style={{
                 width: "600px",
@@ -94,7 +96,13 @@ const Navbar = () => {
             <p>
               <BsFillCartCheckFill size={20} color={"white"} />
             </p>
-            <Link to="/login" style={{ textDecoration: "none" }}>
+            <Link to="/">
+              <Button onClick={logOut}>Log Out</Button>
+            </Link>
+            <Link to="/login">
+              <Button>Log In</Button>
+            </Link>
+            <Link style={{ textDecoration: "none", marginRight: "20px" }}>
               <p className="username">
                 <AiOutlineUser size={20} color={"white"} />
                 {name}

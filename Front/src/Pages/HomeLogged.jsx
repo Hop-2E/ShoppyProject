@@ -2,8 +2,11 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 import Navbar from "../Components/Navbar";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 import { instance } from "../App";
+import { Toast } from "bootstrap";
 const HomePage = () => {
   const [image, setImage] = useState();
   const [role, setRole] = useState();
@@ -19,30 +22,26 @@ const HomePage = () => {
 
   const create = async () => {
     if (role === "admin") {
-      const res = await instance.post("/products/createProduct", {
+      await instance.post("/products/createProduct", {
         image: image,
         category: category,
         price: price,
         user_id: id,
       });
-      console.log(res);
+      toast.success("Created");
     } else {
-      console.log("as");
+      toast.error("Admin erh avna uu");
     }
   };
 
-  const logOut = async () => {
-    window.localStorage.removeItem("id");
-  };
   useEffect(() => {
     getData();
   }, []);
   return (
     <div>
+      <ToastContainer />
       <Navbar />
-      <Link to="/">
-        <Button onClick={logOut}>Log Out</Button>
-      </Link>
+
       <div>
         <input placeholder="Image" onChange={(e) => setImage(e.target.value)} />
         <input

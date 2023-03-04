@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "../App.css";
 import { instance } from "../App";
-
+import { Link } from "react-router-dom";
 const Types = () => {
   const [data, setData] = useState([]);
 
@@ -29,7 +29,9 @@ const Types = () => {
             data.map((el) => {
               return (
                 <div>
-                  <img src={el.image} alt="" />
+                  <Link to="/order">
+                    <img src={el.image} alt="" />
+                  </Link>
                 </div>
               );
             })}

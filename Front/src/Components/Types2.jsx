@@ -26,9 +26,9 @@ const Types2 = () => {
         <p>Aнгиллаар дэлгүүр хэсэх</p>
         <div className="types">
           {data &&
-            data.map((el) => {
+            data.map((el, index) => {
               return (
-                <div>
+                <div key={index}>
                   <img src={el.image} alt="" />
                 </div>
               );

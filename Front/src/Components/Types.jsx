@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "../App.css";
 import { instance } from "../App";
+import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 const Types = () => {
@@ -19,12 +20,14 @@ const Types = () => {
     console.log(res);
   };
   const buyProduct = async (id) => {
-    console.log(id);
-    const res = await instance.post("/order", {
-      productId: id,
-      user_id: JSON.parse(localStorage.getItem("id")),
-    });
-    console.log(res);
+    try {
+      await instance.post("/order", {
+        productId: id,
+        user_id: JSON.parse(localStorage.getItem("id")),
+      });
+    } catch (error) {
+      toast.error("Nevter");
+    }
   };
 
   useEffect(() => {
@@ -32,6 +35,7 @@ const Types = () => {
   }, []);
   return (
     <div className="gygy">
+      <ToastContainer />
       <div className="typesCont">
         <p>Aнгиллаар дэлгүүр хэсэх</p>
         <div className="types">

@@ -22,6 +22,10 @@ const ProductSchema = new mongoose.Schema({
     required: [false, "Price"],
     type: String,
   },
+  count: {
+    type: Number,
+    required: true,
+  },
 });
 const OrderSchema = new mongoose.Schema({
   productId: {

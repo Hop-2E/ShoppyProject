@@ -97,10 +97,19 @@ const Navbar = () => {
               <BsFillCartCheckFill size={20} color={"white"} />
             </p>
             <Link to="/">
-              <Button onClick={logOut}>Log Out</Button>
+              <Button
+                style={{ backgroundColor: "#6c2799", borderColor: "white" }}
+                onClick={logOut}
+              >
+                Log Out
+              </Button>
             </Link>
             <Link to="/login">
-              <Button>Log In</Button>
+              <Button
+                style={{ backgroundColor: "#6c2799", borderColor: "white" }}
+              >
+                Log In
+              </Button>
             </Link>
             <Link style={{ textDecoration: "none", marginRight: "20px" }}>
               <p className="username">

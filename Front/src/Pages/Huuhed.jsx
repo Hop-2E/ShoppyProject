@@ -9,7 +9,6 @@ const Huuhed = () => {
       <Navbar />
       <ThirdPicture />
       <Types3 />
-      <ThirdPicture />
     </>
   );
 };

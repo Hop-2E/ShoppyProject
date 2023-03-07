@@ -11,7 +11,11 @@ const Login = () => {
       password: password,
     });
     console.log(res);
-    window.location.replace(`/users/${res.data.data._id}`);
+    if (res.data.data.role === "admin") {
+      window.location.replace(`/users/${res.data.data._id}`);
+    }else {
+      window.location.replace(`/users/normal/${res.data.data._id}`);
+    }
   };
 
   return (

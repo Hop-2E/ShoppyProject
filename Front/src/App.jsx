@@ -9,6 +9,7 @@ import Login from "./Pages/Login";
 // import { Login } from "./Pages/index.js";
 import Order from "./Pages/Order.jsx";
 import Navbar from "./Components/Navbar";
+import AdminLogged from "./Pages/AdminLogged.jsx";
 import HomeLogged from "./Pages/HomeLogged";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -35,7 +36,8 @@ export default function App() {
           <Route path="/c/kids" element={<Huuhed />} />
           <Route path="/c/sport" element={<Sport />} />
           <Route path="/order" element={<Order />} />
-          <Route path="/users/:id" element={<HomeLogged />} />
+          <Route path="/users/:id" element={<AdminLogged />} />
+          <Route path="/users/normal/:id" element={<HomeLogged />} />
         </Routes>
       </BrowserRouter>
     </div>

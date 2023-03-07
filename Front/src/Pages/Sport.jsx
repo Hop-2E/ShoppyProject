@@ -9,7 +9,7 @@ const Sport = () => {
       <Navbar />
       <FourthPicture />
       <Types4 />
-      <FourthPicture />
+
     </>
   );
 };

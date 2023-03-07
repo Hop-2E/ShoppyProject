@@ -9,7 +9,6 @@ const Emegtei = () => {
       <Navbar />
       <OnePicture />
       <Types />
-      <OnePicture />
     </>
   );
 };

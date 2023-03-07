@@ -29,11 +29,10 @@ export const createProduct = async (req, res) => {
     });
   }
 };
-export const orderTest = async (req, res) => {
+export const getOrderById = async (req, res) => {
   try {
-    // const { productId } = req.body;
-    // const product = await Order.create(productId);
-    const product = await Order.create(req.body);
+    const { id } = req.params;
+    const product = await Product.findById(id);
     res.status(200).send({
       data: product,
     });
@@ -76,10 +75,10 @@ export const getUsersProduct = async (req, res) => {
 export const approveProduct = async (req, res) => {
   try {
     const { id } = req.body;
-    const product = await Order.findById(id);
-    await Order.findByIdAndRemove(id);
+    const order = await Order.findById(id);
+
     res.status(200).send({
-      data: product,
+      data: order,
       message: "Approved",
     });
   } catch (error) {
@@ -102,6 +101,20 @@ export const getProductByCate = async (req, res) => {
   } catch (error) {
     res.status(400).send({
       data: error,
+    });
+  }
+};
+
+export const deleteProduct = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const product = await Product.findByIdAndDelete({ _id: id });
+    res.status(200).send({
+      data: product,
+    });
+  } catch (error) {
+    res.status(400).send({
+      data: error.message,
     });
   }
 };

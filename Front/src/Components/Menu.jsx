@@ -17,7 +17,7 @@ const Menu = () => {
     <>
       <div>
         <Button variant="primary" className="menu" onClick={click}>
-          "АНГИЛАЛ"
+          АНГИЛАЛ
         </Button>{" "}
       </div>
     </>

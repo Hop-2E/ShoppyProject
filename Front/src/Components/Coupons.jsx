@@ -1,12 +1,5 @@
-import shoppy1 from "../Assets/shoppy1.webp"
-
-
-function Coupons(){
-    return(
-        <div className="coupcont">
-            
-        </div>
-    )
+function Coupons() {
+  return <div className="coupcont"></div>;
 }
 
-export default Coupons
+export default Coupons;

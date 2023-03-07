@@ -215,3 +215,104 @@
     height: 300px;
     background-color: #ff6166;
   }
+
+.shoppy-drawer-body {
+    height: 100vh;
+    width: 60vw;
+    background-color: #fff;
+    padding: 20px 5px 20px 20px;
+    overflow: auto;
+}
+.img {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    width: 20px;
+    padding: 0px 8px 0px 0px;
+    color: gray;
+}
+.shoppy-tabs-nav {
+    width: 30vw;
+    height: 70vh;
+    padding: 0px 24px 20px 0px;
+}
+.btn-taxonomy {
+    font-size: 14px;
+    color: rgb(36, 36, 36);
+    font-family: sans-serif;
+    
+}
+.shoppy-tabs-tab {
+    padding: 8px 10px;
+    height: 36px;
+    width: 256px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    transition: color 0.3s ease-in-out;
+}
+.btn-taxonomy:hover {
+    cursor: pointer;
+    color: #ff6166;
+}
+.img:hover {
+    cursor: pointer;
+}
+.right {
+    display: flex;
+    align-items: center;
+}
+.btn-container {
+    display: flex;
+}
+.shoppy-tabs-navTwo {
+    width: 30vw;
+    height: 60vh;
+    padding: 0px 24px 20px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.btn-container-two {
+    height: 36px;
+    width: 256px;
+    background-color: rgb(243, 243, 243);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.container {
+   display: flex;
+   justify-content: space-between;
+   flex-direction: row;
+}
+img {
+    height: 36px;
+    width: 116px;
+}
+.bigContainer {
+    display: flex;
+    flex-direction: row;
+}
+.btn-close:hover {
+    cursor: pointer;
+    color: #ff6166;
+}
+.btn-con {
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+    margin-left: 25px;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-container-two:hover {
+    cursor: pointer;
+}
+.clickFemale {
+    height: 100vh;
+    width: 30vw;
+    color: black;
+}

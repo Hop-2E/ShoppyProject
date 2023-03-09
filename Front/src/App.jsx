@@ -36,8 +36,10 @@ export default function App() {
           <Route path="/c/kids" element={<Huuhed />} />
           <Route path="/c/sport" element={<Sport />} />
           <Route path="/order" element={<Order />} />
+
           <Route path="/users/:id" element={<AdminLogged />} />
           <Route path="/users/normal/:id" element={<HomeLogged />} />
+          
         </Routes>
       </BrowserRouter>
     </div>

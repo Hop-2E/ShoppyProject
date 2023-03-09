@@ -32,9 +32,7 @@ export const count = async (req, res, next) => {
       }
     );
     if (res.count === 0) {
-      res.status(401).send({
-        success: false,
-      });
+      await Product.findByIdAndDelete(productId);
     }
     console.log(p, "kk");
     next();

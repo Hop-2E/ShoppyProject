@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import "../App.css";
 import { instance } from "../App";
 import { ToastContainer, toast } from "react-toastify";
-import { Link } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 const Types = () => {
   const [data, setData] = useState([]);
@@ -25,11 +24,20 @@ const Types = () => {
         productId: id,
         user_id: JSON.parse(localStorage.getItem("id")),
       });
+      toast.success("Ordered");
+      setIsClicked(false);
     } catch (error) {
       toast.error("Nevter");
     }
   };
-
+  const [isClicked, setIsClicked] = useState(false);
+  const createShow = async () => {
+    if (isClicked === false) {
+      setIsClicked(true);
+    } else {
+      setIsClicked(false);
+    }
+  };
   useEffect(() => {
     getData();
   }, []);
@@ -39,19 +47,51 @@ const Types = () => {
       <div className="typesCont">
         <p>Aнгиллаар дэлгүүр хэсэх</p>
         <div className="types">
-          {data &&
-            data.map((el) => {
-              return (
-                <div>
-                  <Button
-                    style={{ backgroundColor: "white ", borderColor: "white" }}
-                    onClick={() => buyProduct(el._id)}
-                  >
-                    <img src={el.image} alt="" />
-                  </Button>
-                </div>
-              );
-            })}
+          {!isClicked === false ? (
+            <div
+              onClick={createShow}
+              className="centerGYGY"
+              style={{
+                display: "flex",
+                width: "40vw",
+                height: "50vh",
+              }}
+            >
+              {data &&
+                data.map((el, key) => {
+                  return (
+                    <>
+                      <div className="leftDiv">
+                        <img className="productiinPic" src={el.image} alt="" />
+                      </div>
+                      <div className="rightDiv">
+                        <span>bal@</span>
+                        <span>bal@</span>
+                        <span>bal@</span>
+                        <span>bal@  </span>
+                      </div>
+                    </>
+                  );
+                })}
+            </div>
+          ) : (
+            <div>
+              {data &&
+                data.map((el) => {
+                  return (
+                    <div>
+                      <Button onClick={createShow}>
+                        <img
+                          style={{ height: "auto", width: "auto" }}
+                          src={el.image}
+                          alt=""
+                        />
+                      </Button>
+                    </div>
+                  );
+                })}
+            </div>
+          )}
         </div>
       </div>
     </div>

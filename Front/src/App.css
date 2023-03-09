@@ -64,6 +64,8 @@
       height: 157px;
       width: 100%;
       z-index: 1;
+      position: sticky;
+      top: 0;
   }
   
   .tavtaimoril {
@@ -212,8 +214,11 @@
   }
   .coupcont{
     width: 100%;
-    height: 300px;
-    background-color: #ff6166;
+    height: 150px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
 .shoppy-drawer-body {
@@ -316,3 +321,19 @@ img {
     width: 30vw;
     color: black;
 }
+  .couponpic{
+    height: 120px;
+    width: 290px;
+  }
+
+  .productcont{
+    width: 100%;
+    height:auto;
+    background-color: #ff6166;
+    display: flex;
+    flex-direction: column;
+  }
+  .flex{
+    display: flex;
+    justify-content: space-between;
+  }

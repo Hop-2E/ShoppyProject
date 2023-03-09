@@ -2,18 +2,15 @@ import { useEffect, useState } from "react";
 import "../App.css";
 import { instance } from "../App";
 import { ToastContainer, toast } from "react-toastify";
-import { Link } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 const Types = () => {
   const [data, setData] = useState([]);
-  // const [id, setId] = useState();
   const getData = async () => {
     const res = await instance.post("/products/cate", {
       category: "female",
     });
     setData(
       res.data.data.map((el) => {
-        // setId(el._id);
         return el;
       })
     );
@@ -25,6 +22,7 @@ const Types = () => {
         productId: id,
         user_id: JSON.parse(localStorage.getItem("id")),
       });
+      toast.success("Ordered");
     } catch (error) {
       toast.error("Nevter");
     }
@@ -47,7 +45,11 @@ const Types = () => {
                     style={{ backgroundColor: "white ", borderColor: "white" }}
                     onClick={() => buyProduct(el._id)}
                   >
-                    <img src={el.image} alt="" />
+                    <img
+                      style={{ height: "auto", width: "auto" }}
+                      src={el.image}
+                      alt=""
+                    />
                   </Button>
                 </div>
               );

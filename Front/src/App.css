@@ -222,104 +222,124 @@
   }
 
 .shoppy-drawer-body {
-    height: 100vh;
-    width: 60vw;
-    background-color: #fff;
-    padding: 20px 5px 20px 20px;
-    overflow: auto;
+  height: 100vh;
+  width: 60vw;
+  background-color: #fff;
+  padding: 20px 5px 20px 20px;
+  overflow: auto;
 }
 .img {
-    display: flex;
-    align-items: center;
-    height: 20px;
-    width: 20px;
-    padding: 0px 8px 0px 0px;
-    color: gray;
+  display: flex;
+  align-items: center;
+  height: 20px;
+  width: 20px;
+  padding: 0px 8px 0px 0px;
+  color: gray;
 }
 .shoppy-tabs-nav {
-    width: 30vw;
-    height: 70vh;
-    padding: 0px 24px 20px 0px;
+  width: 30vw;
+  height: 70vh;
+  padding: 0px 24px 20px 0px;
 }
 .btn-taxonomy {
-    font-size: 14px;
-    color: rgb(36, 36, 36);
-    font-family: sans-serif;
-    
+  font-size: 14px;
+  color: rgb(36, 36, 36);
+  font-family: sans-serif;
 }
 .shoppy-tabs-tab {
-    padding: 8px 10px;
-    height: 36px;
-    width: 256px;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 5px;
-    transition: color 0.3s ease-in-out;
+  padding: 8px 10px;
+  height: 36px;
+  width: 256px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  transition: color 0.3s ease-in-out;
 }
 .btn-taxonomy:hover {
-    cursor: pointer;
-    color: #ff6166;
+  cursor: pointer;
+  color: #ff6166;
 }
 .img:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 .right {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 .btn-container {
-    display: flex;
+  display: flex;
 }
 .shoppy-tabs-navTwo {
-    width: 30vw;
-    height: 60vh;
-    padding: 0px 24px 20px 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+  width: 30vw;
+  height: 60vh;
+  padding: 0px 24px 20px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 .btn-container-two {
-    height: 36px;
-    width: 256px;
-    background-color: rgb(243, 243, 243);
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
+  height: 36px;
+  width: 256px;
+  background-color: rgb(243, 243, 243);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
 }
 .container {
-   display: flex;
-   justify-content: space-between;
-   flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 }
 img {
-    height: 36px;
-    width: 116px;
+  height: 36px;
+  width: 116px;
 }
 .bigContainer {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 .btn-close:hover {
-    cursor: pointer;
-    color: #ff6166;
+  cursor: pointer;
+  color: #ff6166;
 }
 .btn-con {
-    height: 40px;
-    width: 40px;
-    border-radius: 5px;
-    margin-left: 25px;
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+  margin-left: 25px;
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .btn-container-two:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 .clickFemale {
-    height: 100vh;
-    width: 30vw;
-    color: black;
+  height: 100vh;
+  width: 30vw;
+  color: black;
+}
+.centerGYGY {
+  position: fixed;
+  left: 30%;
+  top: 30%;
+  /* opacity: 50%; */
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.18);
+}
+.productiinPic {
+  width: 70%;
+  height: 70%;
+}
+.leftDiv {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
   .couponpic{
     height: 120px;
@@ -337,3 +357,6 @@ img {
     display: flex;
     justify-content: space-between;
   }
+.rightDiv {
+  width: 40%;
+}

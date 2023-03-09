@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 import { instance } from "../App";
+import BigAds from "../Components/BigAds";
 import { Toast } from "bootstrap";
 const AdminLogged = () => {
   const [image, setImage] = useState();
@@ -15,6 +16,7 @@ const AdminLogged = () => {
   const [count, setCount] = useState();
   const [order, setOrder] = useState([]);
   const [post, setPost] = useState([]);
+  const [name, setName] = useState([]);
   const [orderId, setOrderId] = useState();
   const [productId, setProductId] = useState();
 
@@ -34,6 +36,7 @@ const AdminLogged = () => {
         price: price,
         user_id: id,
         count: count,
+        name: name,
       });
 
       toast.success("Created");
@@ -41,8 +44,15 @@ const AdminLogged = () => {
       toast.error("Admin erh avna uu");
     }
   };
-
+  const createShow = async () => {
+    if (isClicked2 === false) {
+      setIsClicked2(true);
+    } else {
+      setIsClicked2(false);
+    }
+  };
   const [isClicked, setIsClicked] = useState(false);
+  const [isClicked2, setIsClicked2] = useState(false);
   const Orders = async () => {
     if (role === "admin") {
       if (isClicked === false) {
@@ -58,7 +68,7 @@ const AdminLogged = () => {
         );
         setPost(
           res2.data.data.map((el) => {
-            return el.image;
+            return el;
           })
         );
         setIsClicked(true);
@@ -78,9 +88,12 @@ const AdminLogged = () => {
     });
     const res2 = await instance.get(`/products/${productId}`);
     console.log(res2);
+    toast.success("Approved");
     if (res2.data.data.count === 0) {
       setPost((prev) => prev.filter((el) => el._id !== productId));
       await instance.delete(`/product/${productId}`);
+    } else {
+      console.log("oonh");
     }
     console.log(res);
   };
@@ -91,28 +104,34 @@ const AdminLogged = () => {
     <div>
       <ToastContainer />
       <Navbar />
-
       <div>
-        <Button
-          style={{
-            display: "flex",
-            alignItems: "right",
-            justifyContent: "right",
-          }}
-          onClick={Orders}
-        >
-          Orders
-        </Button>
-        <input placeholder="Image" onChange={(e) => setImage(e.target.value)} />
-        <input
-          placeholder="Cate"
-          onChange={(e) => setCategory(e.target.value)}
-        />
-        <input placeholder="price" onChange={(e) => setPrice(e.target.value)} />
-        <input placeholder="count" onChange={(e) => setCount(e.target.value)} />
-        <Button onClick={create}>Create</Button>
+        <BigAds />
+      </div>
+      <div>
+        <Button onClick={Orders}>Orders</Button>
+        <Button onClick={createShow}>Create</Button>
       </div>
       {!isClicked === false ? (
+        <div>
+          {post &&
+            post.map((el, key) => {
+              return (
+                <div key={key}>
+                  <img
+                    style={{ height: "auto", width: "auto" }}
+                    src={el.image}
+                    alt=""
+                  />
+                  <p> {el.name}</p>
+                  <Button onClick={Approve}>Approve</Button>
+                </div>
+              );
+            })}
+        </div>
+      ) : (
+        <div></div>
+      )}
+      {!isClicked2 === false ? (
         <div
           style={{
             display: "flex ",
@@ -121,15 +140,25 @@ const AdminLogged = () => {
             height: "200px",
           }}
         >
-          {post &&
-            post.map((el, key) => {
-              return (
-                <div key={key}>
-                  <img src={el} alt="" />
-                  <Button onClick={Approve}>Approve</Button>
-                </div>
-              );
-            })}
+          <input placeholder="name" onChange={(e) => setName(e.target.value)} />
+          <input
+            placeholder="Image"
+            onChange={(e) => setImage(e.target.value)}
+          />
+          <input
+            placeholder="Cate"
+            onChange={(e) => setCategory(e.target.value)}
+          />
+          <input
+            placeholder="price"
+            onChange={(e) => setPrice(e.target.value)}
+          />
+          <input
+            placeholder="count"
+            onChange={(e) => setCount(e.target.value)}
+          />
+
+          <Button onClick={create}>Create</Button>
         </div>
       ) : (
         <div></div>

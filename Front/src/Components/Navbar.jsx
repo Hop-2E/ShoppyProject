@@ -12,30 +12,31 @@ import {
   AiOutlineUser,
 } from "react-icons/ai";
 import Logo from "../Assets/Logo.png";
-import Ads from "./BigAds"
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/esm/Button";
 import "bootstrap/dist/css/bootstrap.css";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { instance } from "../App";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
-  const [id, setId] = useState();
+  const [id2, setId2] = useState();
   const [name, setName] = useState();
+  const { id } = useParams();
   const getData = async () => {
     const res = await instance.get(`/users/${id}`);
     setName(res.data.data.name);
+    console.log(id);
   };
   const logOut = async () => {
     window.localStorage.removeItem("id");
   };
   useEffect(() => {
     getData();
-    setId(JSON.parse(localStorage.getItem("id")));
+    setId2(JSON.parse(localStorage.getItem("id")));
   }, []);
   return (
     <div className="NavCont">
@@ -53,8 +54,8 @@ const Navbar = () => {
         </div>
         <div className="NavMid">
           <div className="midright">
-            <Link to={`/users/${id}`}>
-              <img src={Logo} alt=""></img>
+            <Link to={`/users/${id2}`}>
+              <img style={{ width: "10vw" }} src={Logo} alt=""></img>
             </Link>
             <InputGroup
               style={{

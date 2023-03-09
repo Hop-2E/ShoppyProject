@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import "../App.css";
 import { instance } from "../App";
 import { ToastContainer, toast } from "react-toastify";
-import { Link } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 const Types = () => {
   const [data, setData] = useState([]);
@@ -47,7 +46,11 @@ const Types = () => {
                     style={{ backgroundColor: "white ", borderColor: "white" }}
                     onClick={() => buyProduct(el._id)}
                   >
-                    <img src={el.image} alt="" />
+                    <img
+                      style={{ height: "auto", width: "auto" }}
+                      src={el.image}
+                      alt=""
+                    />
                   </Button>
                 </div>
               );

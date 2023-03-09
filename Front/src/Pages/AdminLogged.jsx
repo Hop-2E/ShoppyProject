@@ -4,10 +4,9 @@ import Button from "react-bootstrap/esm/Button";
 import Navbar from "../Components/Navbar";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Link } from "react-router-dom";
 import { instance } from "../App";
 import BigAds from "../Components/BigAds";
-import { Toast } from "bootstrap";
+
 const AdminLogged = () => {
   const [image, setImage] = useState();
   const [role, setRole] = useState();

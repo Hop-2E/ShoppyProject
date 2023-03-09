@@ -7,219 +7,220 @@
   font-family: sans-serif;
   border-color: #ff6166;
   border-radius: 4px;
-  }
-  .hah {
-    height: 100%;
-    width: 70%;
-    background-color: black;
-  }
-  * {
-    margin: 0;
-  }
-  .NavTop {
-    height: 23%;
-    width: 100%;
-    background-color: #6c2799;
-    border-bottom: 1px solid #844ca8;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .NavMid {
-    height: 42%;
-    width: 100%;
-    background-color: #6c2799;
-    border-bottom: 1px solid #8d5aad;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-  }
-  
-  .midright {
-    left: 24px;
-    display: flex;
-    align-items: center;
-    position: relative;
-  }
-  .midleft {
-    width: 320px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    margin-right: 24px;
-    align-items: center;
-    justify-content: space-evenly;
-    position: relative;
-  }
-  .NavBody {
-    height: 157px;
-    width: 100%;
-    border: 1px solid black;
-    position: sticky;
-    top: 0;
-  }
-  
-  .NavCont{
-      height: 157px;
-      width: 100%;
-      z-index: 1;
-      position: sticky;
-      top: 0;
-  }
-  
-  .tavtaimoril {
-    color: white;
-    font-size: 14px;
-    font-family: Arial, sans-serif;
-    margin-left: 25px;
-    margin-right: 25px;
-  }
-  .tavtaimoril2 {
-    height: 25px;
-    width: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    color: white;
-    font-size: 12px;
-  }
-  .botright {
-    height: 100%;
-    width: 600px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    color: white;
-    font-size: 12px;
-    font-family: Arial, sans-serif;
-    margin-left: 30px;
-  }
-  .icons {
-    height: 15px;
-    width: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    border-right: 2px solid rgb(255, 255, 255);
-    border-left: 2px solid rgb(255, 255, 255);
-  }
-  .NavBot {
-    height: 35%;
-    width: 100%;
-    background-color: #923bc7;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 30px;
-  }
-  .linksWith {
-    font-size: small;
-    color: white;
-  }
-  .rightBotHeader {
-    display: flex;
-    gap: 30px;
-  }
-  .cate {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-  }
-  .News {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  .angilal {
-    display: flex;
-    align-items: center;
-    background-color: #ff6166;
-    border-radius: 5px;
-    padding: 5px 10px;
-  }
-  .angilal span {
-    color: white;
-    font-weight: bold;
-  }
-  .angilal img {
-    width: 15px;
-    height: 15px;
-    padding: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: #ffffff;
-  }
-  .onePicture {
-    width: 80vw;
-  }
-  .onePictureCont {
-    width: 100vw;
-    height: 43vh;
-    display: flex;
-    justify-content: center;
-    padding-top: 50px;
-  }
-  .types {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 10px;
-  }
-  .typesCont {
-    width: 80vw;
-    display: flex;
-    flex-direction: column;
-  }
-  .zuragHOHO {
-    width: 100%;
-  }
-  .gygy {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    padding-top: 50px;
-  }
-  
-  .username {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 10px;
-    color: white;
-  }
-  .icons{
-      height: 15px;
-      width: 150px;
-      display: flex;
-      align-items: center;
-      justify-content: space-evenly;
-      border-right: 2px solid rgb(255, 255, 255);
-      border-left: 2px solid rgb(255, 255, 255);
-  }
-  .adbody{
-      height: 650px;
-      width: 100%;
-      overflow: hidden;
-      z-index: 2;
-  }
-  .adpic{
-      height:650px;
-      width: 100%;
-      z-index: 2;
-  }
-  .coupcont{
-    width: 100%;
-    height: 150px;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+}
+.hah {
+  height: 100%;
+  width: 70%;
+  background-color: black;
+}
+* {
+  margin: 0;
+}
+.NavTop {
+  height: 23%;
+  width: 100%;
+  background-color: #6c2799;
+  border-bottom: 1px solid #844ca8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.NavMid {
+  height: 42%;
+  width: 100%;
+  background-color: #6c2799;
+  border-bottom: 1px solid #8d5aad;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.midright {
+  left: 24px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.midleft {
+  width: 320px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+}
+.NavBody {
+  height: 157px;
+  width: 100%;
+  border: 1px solid black;
+  position: sticky;
+  top: 0;
+}
+
+.NavCont {
+  height: 157px;
+  width: 100%;
+  z-index: 1;
+  position: sticky;
+  top: 0;
+}
+
+.tavtaimoril {
+  color: white;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+.tavtaimoril2 {
+  height: 25px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+  font-size: 12px;
+}
+.botright {
+  height: 100%;
+  width: 600px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  color: white;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  margin-left: 30px;
+}
+.icons {
+  height: 15px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-right: 2px solid rgb(255, 255, 255);
+  border-left: 2px solid rgb(255, 255, 255);
+}
+.NavBot {
+  height: 35%;
+  width: 100%;
+  background-color: #923bc7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+.linksWith {
+  font-size: small;
+  color: white;
+}
+.rightBotHeader {
+  display: flex;
+  gap: 30px;
+}
+.cate {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.News {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.angilal {
+  display: flex;
+  align-items: center;
+  background-color: #ff6166;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+.angilal span {
+  color: white;
+  font-weight: bold;
+}
+.angilal img {
+  width: 15px;
+  height: 15px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+.onePicture {
+  width: 80vw;
+  height: 35vh;
+}
+.onePictureCont {
+  width: 100vw;
+  height: 43vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+.types {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+.typesCont {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+}
+.zuragHOHO {
+  width: 100%;
+}
+.gygy {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.username {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  color: white;
+}
+.icons {
+  height: 15px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-right: 2px solid rgb(255, 255, 255);
+  border-left: 2px solid rgb(255, 255, 255);
+}
+.adbody {
+  height: 650px;
+  width: 100%;
+  overflow: hidden;
+  z-index: 2;
+}
+.adpic {
+  height: 650px;
+  width: 100%;
+  z-index: 2;
+}
+.coupcont {
+  width: 100%;
+  height: 150px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .shoppy-drawer-body {
   height: 100vh;
@@ -341,22 +342,22 @@ img {
   justify-content: center;
   align-items: center;
 }
-  .couponpic{
-    height: 120px;
-    width: 290px;
-  }
+.couponpic {
+  height: 120px;
+  width: 290px;
+}
 
-  .productcont{
-    width: 100%;
-    height:auto;
-    background-color: #ff6166;
-    display: flex;
-    flex-direction: column;
-  }
-  .flex{
-    display: flex;
-    justify-content: space-between;
-  }
+.productcont {
+  width: 100%;
+  height: auto;
+  background-color: #ff6166;
+  display: flex;
+  flex-direction: column;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
 .rightDiv {
   width: 40%;
 }

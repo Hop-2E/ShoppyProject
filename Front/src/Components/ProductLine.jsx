@@ -4,9 +4,6 @@ import { instance } from "../App";
 import { useState } from "react";
 
 function ProductLine() {
-    const [data, setData] = useState()
-    const getData = async () => {
-        const res = await instance.get(`/users/${id}`)}
   return (
     <div className="productcont">
       <Carousel>
@@ -18,7 +15,6 @@ function ProductLine() {
             <Product />
           </div>
         </Carousel.Item>
-
       </Carousel>
     </div>
   );

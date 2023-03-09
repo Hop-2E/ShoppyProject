@@ -24,17 +24,8 @@ const HomePage = () => {
         <div>
           <BigAds />
         </div>
-        <input placeholder="Image" onChange={(e) => setImage(e.target.value)} />
-        <input
-          placeholder="Cate"
-          onChange={(e) => setCategory(e.target.value)}
-        />
-        <input placeholder="price" onChange={(e) => setPrice(e.target.value)} />
-        <Button onClick={create}>Create</Button>
       </div>
-      <div>
-        <Coupons />
-      </div>
+      <div>{/* <Coupons /> */}</div>
       <div>
         <Productline />
       </div>

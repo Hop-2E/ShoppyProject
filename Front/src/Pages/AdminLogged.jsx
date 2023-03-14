@@ -6,6 +6,11 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { instance } from "../App";
 import BigAds from "../Components/BigAds";
+import Coupons from "../Components/Coupons";
+import ProductLine from "../Components/ProductLine";
+
+
+
 const AdminLogged = () => {
   const [image, setImage] = useState();
   const [role, setRole] = useState();
@@ -106,6 +111,12 @@ const AdminLogged = () => {
       <Navbar />
       <div>
         <BigAds />
+      </div>
+      <div>
+        <Coupons/>
+      </div>
+      <div>
+        <ProductLine/>
       </div>
       <div>
         <Button onClick={Orders}>Orders</Button>

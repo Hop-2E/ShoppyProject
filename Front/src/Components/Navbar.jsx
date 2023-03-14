@@ -143,7 +143,9 @@ const Navbar = () => {
                 src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png"
                 alt=""
               />
-              <span>АНГИЛАЛ</span>
+              <div>
+              <span>Angilal</span>
+              </div>
             </div>
             <div className="cate">
               <Link to="/c/female" style={{ textDecoration: "none" }}>

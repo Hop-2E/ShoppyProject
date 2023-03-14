@@ -6,7 +6,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { instance } from "../App";
 import BigAds from "../Components/BigAds";
-
 const AdminLogged = () => {
   const [image, setImage] = useState();
   const [role, setRole] = useState();
@@ -62,6 +61,7 @@ const AdminLogged = () => {
           res.data.data.Order.map((el) => {
             setOrderId(el._id);
             setProductId(el.productId);
+            console.log(el.user_id);
             return el.productId;
           })
         );

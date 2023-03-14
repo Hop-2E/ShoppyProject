@@ -4,7 +4,6 @@ import BigAds from "../Components/BigAds";
 import Navbar from "../Components/Navbar";
 import "react-toastify/dist/ReactToastify.css";
 import { instance } from "../App";
-import Coupons from "../Components/Coupons";
 import Productline from "../Components/ProductLine";
 const HomePage = () => {
   const { id } = useParams();

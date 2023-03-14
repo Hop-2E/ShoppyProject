@@ -18,25 +18,42 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/esm/Button";
 import "bootstrap/dist/css/bootstrap.css";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { instance } from "../App";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
-  const [id2, setId2] = useState();
   const [name, setName] = useState();
-  const { id } = useParams();
+  const [isClicked, setIsClicked] = useState(false);
+  const id = JSON.parse(localStorage.getItem("id"));
+  console.log(id);
   const getData = async () => {
     const res = await instance.get(`/users/${id}`);
     setName(res.data.data.name);
-    console.log(id);
+    console.log(res.data);
   };
   const logOut = async () => {
     window.localStorage.removeItem("id");
   };
+  const test = async () => {
+    const res = await instance.get(`/users/${id}`);
+    if (res.data.data.role === "admin") {
+      setIsClicked(true);
+    } else {
+      setIsClicked(false);
+    }
+  };
+  const test2 = async () => {
+    const res = await instance.get(`/users/${id}`);
+    if (res.data.data.role === "admin") {
+      window.location.replace(`/users/${id}`);
+    } else {
+      window.location.replace(`/users/normal/${id}`);
+    }
+  };
   useEffect(() => {
     getData();
-    setId2(JSON.parse(localStorage.getItem("id")));
+    test();
   }, []);
   return (
     <div className="NavCont">
@@ -54,7 +71,7 @@ const Navbar = () => {
         </div>
         <div className="NavMid">
           <div className="midright">
-            <Link to={`/users/${id2}`}>
+            <Link onClick={test2}>
               <img style={{ width: "10vw" }} src={Logo} alt=""></img>
             </Link>
             <InputGroup
@@ -143,6 +160,15 @@ const Navbar = () => {
               <Link to="/c/sport" style={{ textDecoration: "none" }}>
                 <span className="linksWith">Sports</span>
               </Link>
+              {!isClicked === false ? (
+                <div>
+                  <Link to="/create" style={{ textDecoration: "none" }}>
+                    <span className="linksWith">Create</span>
+                  </Link>
+                </div>
+              ) : (
+                <div></div>
+              )}
             </div>
           </div>
           <div className="News">

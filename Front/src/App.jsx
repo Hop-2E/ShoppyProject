@@ -6,6 +6,7 @@ import Sport from "./Pages/Sport.jsx";
 import Menu from "./Components/Menu.jsx";
 import SignUp from "./Pages/SignUp";
 import Login from "./Pages/Login";
+import Create from "./Pages/Create.jsx";
 // import { Login } from "./Pages/index.js";
 import Order from "./Pages/Order.jsx";
 import Navbar from "./Components/Navbar";
@@ -39,7 +40,7 @@ export default function App() {
 
           <Route path="/users/:id" element={<AdminLogged />} />
           <Route path="/users/normal/:id" element={<HomeLogged />} />
-          
+          <Route path="/create" element={<Create />} />
         </Routes>
       </BrowserRouter>
     </div>

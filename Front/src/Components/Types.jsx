@@ -5,10 +5,13 @@ import { ToastContainer, toast } from "react-toastify";
 import Button from "react-bootstrap/esm/Button";
 const Types = () => {
   const [data, setData] = useState([]);
+  const nameId = JSON.parse(localStorage.getItem("id"));
   const getData = async () => {
     const res = await instance.post("/products/cate", {
       category: "female",
     });
+    const res2 = await instance.get(`/users/${nameId}`);
+    console.log(res2);
     setData(
       res.data.data.map((el) => {
         return el;

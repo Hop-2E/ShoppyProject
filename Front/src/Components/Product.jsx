@@ -1,19 +1,21 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
-function Product({ data }) {
+function Product(data) {
   return (
     <div>
-      {" "}
-      <Card style={{ width: "16rem" }}>
-        <Card.Img
-          variant="top"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVhTFItQj80WVM8dZZC2tsek-PEWU8lTmXSQ&usqp=CAU"
-        />
+      <Card style={{ width: "16em" }}>
+        <Card.Img variant="top" style={{height:"100px"}} src={data.data.image} />
         <Card.Body>
-          <Card.Title>{}</Card.Title>
-          <Card.Text>Price: 69 stock: 5 category: sport</Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Card.Title>{data.data.name}</Card.Title>
+          <Card.Text>
+            Price: {data.data.price}
+          <br />
+            stock: {data.data.count}
+          <br />
+            category: {data.data.category}
+          </Card.Text>
+          <Button variant="primary">Order</Button>
         </Card.Body>
       </Card>
     </div>

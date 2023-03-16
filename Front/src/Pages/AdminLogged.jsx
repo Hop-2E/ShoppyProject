@@ -64,13 +64,13 @@ const AdminLogged = () => {
             return el.productId;
           })
         );
-        if (orderId) {
-          setPost(
-            res2.data.data.map((el) => {
-              return el;
-            })
-          );
-        }
+
+        setPost(
+          res2.data.data.map((el) => {
+            return el;
+          })
+        );
+
         setIsClicked(true);
       } else {
         setIsClicked(false);

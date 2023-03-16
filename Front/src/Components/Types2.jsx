@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import Button from "react-bootstrap/esm/Button";
 const Types = () => {
   const [data, setData] = useState([]);
+  const [data2, setData2] = useState([]);
   const [id, setId] = useState();
   const getData = async () => {
     const res = await instance.post("/products/cate", {
@@ -20,19 +21,32 @@ const Types = () => {
   };
   const buyProduct = async () => {
     try {
+      console.log(id);
       await instance.post("/order", {
         productId: id,
         user_id: JSON.parse(localStorage.getItem("id")),
       });
       toast.success("Ordered");
-      setData((prev) => prev.filter((el) => el._id !== id));
+
       setIsClicked(false);
     } catch (error) {
       toast.error("Nevter");
     }
   };
   const [isClicked, setIsClicked] = useState(false);
-  const createShow = async () => {
+  const createShow = async (id) => {
+    const res = await instance.get(`/products`);
+    if (res.data.data.map((el) => el._id === id)) {
+      const res2 = await instance.get(`/products/${id}`);
+      setData2(res2.data.data);
+    }
+    if (isClicked === false) {
+      setIsClicked(true);
+    } else {
+      setIsClicked(false);
+    }
+  };
+  const createShow2 = () => {
     if (isClicked === false) {
       setIsClicked(true);
     } else {
@@ -51,33 +65,27 @@ const Types = () => {
         <div className="types">
           {/* Component bolgoj hii 2 shirheg */}
           {!isClicked === false ? (
-            data &&
-            data.map((el, key) => {
-              return (
-                <div
-                  onClick={createShow}
-                  className="centerGYGY"
-                  style={{
-                    display: "flex",
-                    width: "40vw",
-                    height: "50vh",
-                    flexDirection: "row",
-                  }}
-                >
-                  <div className="leftDiv" key={key}>
-                    <img className="productiinPic" src={el.image} alt="" />
-                  </div>
-                  <div className="rightDiv">
-                    <p>Product name: "{el.name}"</p>
-                    <p>Product price: "{el.price}"</p>
-                    <p>Product stock: "{el.count}"</p>
-                    <p>Product categotry: "{el.category}"</p>
-                    <Button onClick={buyProduct}>Order</Button>
-                    <Button onClick={createShow}>X</Button>
-                  </div>
-                </div>
-              );
-            })
+            <div
+              className="centerGYGY"
+              style={{
+                display: "flex",
+                width: "40vw",
+                height: "50vh",
+                flexDirection: "row",
+              }}
+            >
+              <div className="leftDiv">
+                <img className="productiinPic" src={data2.image} alt="" />
+              </div>
+              <div className="rightDiv">
+                <p>Product name: "{data2.name}"</p>
+                <p>Product price: "{data2.price}"</p>
+                <p>Product stock: "{data2.count}"</p>
+                <p>Product categotry: "{data2.category}"</p>
+                <Button onClick={() => buyProduct(data._id)}>Order</Button>
+                <Button onClick={createShow2}>X</Button>
+              </div>
+            </div>
           ) : (
             <div
               style={{
@@ -89,7 +97,7 @@ const Types = () => {
                 data.map((el) => {
                   return (
                     <div className="types">
-                      <Button onClick={createShow}>
+                      <Button onClick={() => createShow(el._id)}>
                         <img
                           style={{
                             height: "auto",

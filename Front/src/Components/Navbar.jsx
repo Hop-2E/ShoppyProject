@@ -26,11 +26,9 @@ const Navbar = () => {
   const [name, setName] = useState();
   const [isClicked, setIsClicked] = useState(false);
   const id = JSON.parse(localStorage.getItem("id"));
-  console.log(id);
   const getData = async () => {
     const res = await instance.get(`/users/${id}`);
     setName(res.data.data.name);
-    console.log(res.data);
   };
   const logOut = async () => {
     window.localStorage.removeItem("id");

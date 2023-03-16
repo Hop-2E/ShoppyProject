@@ -56,20 +56,21 @@ const AdminLogged = () => {
       if (isClicked === false) {
         const res = await instance.get(`/products/users/${id}`);
         const res2 = await instance.get(`/products/${order}`);
-        console.log(res2);
+
         setOrder(
           res.data.data.Order.map((el) => {
             setOrderId(el._id);
             setProductId(el.productId);
-            console.log(el.user_id);
             return el.productId;
           })
         );
+
         setPost(
           res2.data.data.map((el) => {
             return el;
           })
         );
+
         setIsClicked(true);
       } else {
         setIsClicked(false);
@@ -108,7 +109,6 @@ const AdminLogged = () => {
       </div>
       <div>
         <Button onClick={Orders}>Orders</Button>
-        <Button onClick={createShow}>Create</Button>
       </div>
       {!isClicked === false ? (
         <div>
